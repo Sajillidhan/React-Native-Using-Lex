@@ -28,12 +28,13 @@ import AWS from 'aws-sdk/dist/aws-sdk-react-native'
 import soundImg from './assets/mic.png';
 import muteImg from './assets/msg.png';
 import RNFetchBlob from 'rn-fetch-blob';
+import config from './config';
 
 // Initialize the Amazon Cognito credentials provider
 
-AWS.config.region = 'ap-southeast-1'; // Region
+AWS.config.region = config.awsRegion;
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-IdentityPoolId: 'ap-southeast-1:68e7183f-933f-4ba5-857f-6c90fecabdcb',
+IdentityPoolId: config.cognitoIdentityPoolId,
 })
 
 
